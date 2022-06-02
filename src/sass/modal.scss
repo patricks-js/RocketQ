@@ -2,10 +2,12 @@
   width: 100%;
   height: 100vh;
   background-color: $overlay;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
   .modal {
     width: 59rem;
     height: 36.2rem;
@@ -21,7 +23,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
     .title {
       margin: 0;
     }
@@ -47,6 +52,15 @@
           }
         }
       }
+    }
+  }
+  &.show-modal {
+    visibility: visible;
+    opacity: 1;
+    .modal {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, -50%);
     }
   }
 }

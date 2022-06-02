@@ -344,9 +344,12 @@ input::placeholder {
   width: 100%;
   height: 100vh;
   background-color: rgba(4, 9, 17, 0.7);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
 }
 .modal-container .modal {
   width: 59rem;
@@ -362,7 +365,10 @@ input::placeholder {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
 }
 .modal-container .modal .title {
   margin: 0;
@@ -389,6 +395,15 @@ input::placeholder {
 }
 .modal-container .modal form .buttons-modal .button:nth-child(2) {
   background-color: #e93f5b;
+}
+.modal-container.show-modal {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-container.show-modal .modal {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=style.css.map */
