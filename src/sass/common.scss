@@ -7,13 +7,21 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
+  height: 100vh;
+  position: relative;
 }
 
 body {
   font: 400 1.6rem $fontBody;
   background-color: $brand-white;
   -webkit-font-smoothing: antialiased;
-  overflow: hidden;
+  &.overlay {
+    overflow-y: hidden;
+  }
+}
+
+p {
+  word-break: break-all;
 }
 
 ul {
